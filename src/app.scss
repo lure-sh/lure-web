@@ -33,3 +33,17 @@
 pre {
     background-color: transparent;
 }
+
+.terminal-player {
+    max-width: 735px;
+    max-height: 450px;
+}
+
+.sc-carousel__carousel-container {
+    --sc-arrow-size: 3px;
+}
+
+button.sc-carousel-arrow__circle {
+    width: 30px !important;
+    height: 30px !important;
+}

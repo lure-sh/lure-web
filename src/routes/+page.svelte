@@ -7,6 +7,8 @@
     import bash from 'svelte-highlight/languages/bash';
     import agate from 'svelte-highlight/styles/agate';
 
+    import {Player, Video, DefaultUi} from '@vime/svelte';
+
     let Carousel;
     onMount(async () => {
         // Perform dynamic import of svelte-carousel because it breaks
@@ -16,24 +18,20 @@
 
     let images = [
         {
-            path: "/lure-arch.gif",
+            path: "/lure-arch.webm",
             caption: "Recorded on Arch Linux with LURE commit 81013ce",
-            alt: "GIF depicting an Arch Linux terminal with LURE installing a package"
         },
         {
-            path: "/lure-debian.gif",
+            path: "/lure-debian.webm",
             caption: "Recorded on Debian Sid with LURE commit 81013ce",
-            alt: "GIF depicting a Debian terminal with LURE installing a package"
         },
         {
-            path: "/lure-fedora.gif",
+            path: "/lure-fedora.webm",
             caption: "Recorded on Fedora 36 with LURE commit 81013ce",
-            alt: "GIF depicting a Fedora terminal with LURE installing a package"
         },
         {
-            path: "/lure-alpine.gif",
+            path: "/lure-alpine.webm",
             caption: "Recorded on Alpine Linux 3.16 with commit 81013ce",
-            alt: "GIF depicting an Alpine Linux terminal with LURE installing a package"
         },
     ];
 </script>
@@ -93,10 +91,17 @@
     <!-- Use dynamically imported Carousel module -->
     <svelte:component this={Carousel}>
         {#each images as image}
-            <figure class="has-text-centered">
-                <img src={image.path} alt={image.alt ?? "GIF depicting LURE installing a package"}>
-                <figcaption>{image.caption ?? ""}</figcaption>
-            </figure>
+            <div class="has-text-centered">
+                <figure class="terminal-player mx-auto">
+                    <Player>
+                        <Video>
+                            <source data-src="{image.path}" type="video/webm">
+                        </Video>
+                        <DefaultUi></DefaultUi>
+                    </Player>
+                    <figcaption>{image.caption ?? ""}</figcaption>
+                </figure>
+            </div>
         {/each}
     </svelte:component>
 
