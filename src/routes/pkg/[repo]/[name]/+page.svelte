@@ -66,7 +66,11 @@
                         <th>Licenses:</th>
                         <td>
                             {#each pkg.licenses as license, index}
-                                <a href="https://spdx.org/licenses/{license}.html">{license}</a>{#if index+1 < pkg.licenses.length},&nbsp;{/if}
+                                {#if license.startsWith('custom')}
+                                    {license}{#if index+1 < pkg.licenses.length},&nbsp{/if}
+                                {:else}
+                                    <a href="https://spdx.org/licenses/{license}.html">{license}</a>{#if index+1 < pkg.licenses.length},&nbsp;{/if}
+                                {/if}
                             {/each}
                         </td>
                     </tr>
