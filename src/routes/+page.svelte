@@ -7,13 +7,12 @@
     import bash from 'svelte-highlight/languages/bash';
     import agate from 'svelte-highlight/styles/agate';
 
-    import {Player, Video, DefaultUi} from '@vime/svelte';
-
-    let Carousel;
+    let Carousel, Player, Video, DefaultUi;
     onMount(async () => {
         // Perform dynamic import of svelte-carousel because it breaks
         // if imported during SSR
         Carousel = (await import('svelte-carousel')).default;
+        ({Player, Video, DefaultUi} = await import('@vime/svelte'));
     })
 
     let images = [
@@ -93,12 +92,12 @@
         {#each images as image}
             <div class="has-text-centered">
                 <figure class="terminal-player mx-auto">
-                    <Player>
-                        <Video>
+                    <svelte:component this={Player}>
+                        <svelte:component this={Video}>
                             <source data-src="{image.path}" type="video/webm">
-                        </Video>
-                        <DefaultUi></DefaultUi>
-                    </Player>
+                        </svelte:component>
+                        <svelte:component this={DefaultUi}></svelte:component>
+                    </svelte:component>
                     <figcaption>{image.caption ?? ""}</figcaption>
                 </figure>
             </div>
