@@ -39,6 +39,7 @@
 </script>
 
 <svelte:head>
+    <title>Home | LURE Web</title>
     {@html agate}
 </svelte:head>
 

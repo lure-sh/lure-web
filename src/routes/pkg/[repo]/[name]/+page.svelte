@@ -25,6 +25,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>{$page.params.name} Package | LURE Web</title>
+</svelte:head>
+
 <Header/>
 
 <section class="container">

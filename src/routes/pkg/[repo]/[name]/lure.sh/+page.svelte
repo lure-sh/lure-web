@@ -18,6 +18,7 @@
 </script>
 
 <svelte:head>
+    <title>{$page.params.name} Build Script | LURE Web</title>
     {@html agate}
 </svelte:head>
 

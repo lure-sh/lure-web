@@ -45,6 +45,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Package Search | LURE Web</title>
+</svelte:head>
+
 <Header/>
 
 <section class="container">
