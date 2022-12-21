@@ -19,6 +19,7 @@
 
 <svelte:head>
     <title>{$page.params.name} Build Script | LURE Web</title>
+    <meta name="description" content="The build script for the {$page.params.name} LURE package.">
     {@html agate}
 </svelte:head>
 

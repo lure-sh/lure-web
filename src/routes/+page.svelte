@@ -40,6 +40,7 @@
 
 <svelte:head>
     <title>Home | LURE Web</title>
+    <meta name="description" content="LURE Web home page">
     {@html agate}
 </svelte:head>
 

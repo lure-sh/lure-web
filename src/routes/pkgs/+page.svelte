@@ -47,6 +47,7 @@
 
 <svelte:head>
     <title>Package Search | LURE Web</title>
+    <meta name="description" content="Search for LURE packages">
 </svelte:head>
 
 <Header/>

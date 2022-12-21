@@ -27,6 +27,7 @@
 
 <svelte:head>
     <title>{$page.params.name} Package | LURE Web</title>
+    <meta name="description" content="Information about the {$page.params.name} LURE package.">
 </svelte:head>
 
 <Header/>
