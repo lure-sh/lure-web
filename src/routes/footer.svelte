@@ -3,7 +3,7 @@
 </script>
 
 <br style="margin-top: 20px">
-<div class="hero is-dark is-small" id="footer">
+<div class="hero is-dark is-small">
     <div class="hero-body has-text-centered">
         <p>Copyright &copy; {new Date().getFullYear()} LURE Web Contributors. Licensed under the <a class="has-text-link" href="https://www.gnu.org/licenses/agpl-3.0-standalone.html">AGPLv3</a>.</p>
         <div class="is-size-4">

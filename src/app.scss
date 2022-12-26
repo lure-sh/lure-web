@@ -48,14 +48,16 @@ button.sc-carousel-arrow__circle {
     height: 30px !important;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
+body {
     margin: 0;
-    display: table;
 }
 
-#footer {
-    display: table-row;
-    height: 100px;
+#page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#page-container > * {
+    width: 100%
 }
