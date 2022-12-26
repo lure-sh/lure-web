@@ -12,7 +12,7 @@
 
 <nav class="navbar mb-5">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/"><img src="/header-logo.svg" alt="LURE Logo"></a>
+        <a class="navbar-item" href="/"><img src="/lure-text-white.svg" alt="LURE Logo"></a>
         <button class="navbar-burger {navbarIsActive ? 'is-active' : ''}" aria-label="menu" on:click={() => {navbarIsActive = !navbarIsActive}}>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>

@@ -65,6 +65,13 @@
         <a href="https://pkgs.org">pkgs.org</a>. These websites maintain comprehensive databases of package repositories for various distributions.
     </p>
     <hr>
+    <p class="subtitle" id="icons">Can I use and modify LURE's icons?</p>
+    <p>
+        LURE's icons are available on the <a href="/icons">icons page</a> of this website and are licensed under CC-BY-NC-SA 4.0. This means that
+        you are free to share, modify, and use the icons for non-commercial purposes as long as you give appropriate credit and indicate any changes
+        made to the original icons.
+    </p>
+    <hr>
     <p class="subtitle" id='adding-packages'>How do I add my own package to LURE?</p>
     <p>
         To add your own package, please refer to the <a href="https://github.com/Arsen6331/lure/blob/master/docs/packages">package documentation</a> provided by LURE.
