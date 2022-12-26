@@ -46,7 +46,7 @@
 
 <section class="container">
     <p class="title">LURE</p>
-    <p class="subtitle">The AUR missing from most Linux distributions</p>
+    <p class="subtitle">The user repo missing from most Linux distros</p>
     <hr>
     <div class="columns">
         <div class="column">
@@ -55,11 +55,11 @@
                     <p class="card-header-title">Why should I use it?</p>
                 </div>
                 <div class="card-content">
-                    LURE allows you to install your favorite software that may not be
-                    popular enough to be placed into your distro's repos, while preserving
-                    all the benefits of installing from repos, such as updates, easy
-                    uninstalling, etc. It also allows developers to provide a single place
-                    for their users to install their software.
+                    LURE allows users to install software that may not be widely distributed
+                    through official repositories, while still maintaining the convenience
+                    of installation through repository sources. This includes features such
+                    as updates and simple uninstallation. Additionally, LURE provides developers
+                    with a central location for all their users to use to install their software.
                 </div>
             </div>
         </div>
@@ -69,11 +69,11 @@
                     <p class="card-header-title">How does it work?</p>
                 </div>
                 <div class="card-content">
-                    LURE works by abstracting package formats and package managers. It
-                    builds native packages for your native package manager using AUR 
-                    PKGBUILD-like bash scripts, then installs them using that package manager.
-                    This means that once LURE has successfully installed a package, it acts
-                    just like any other package and can be managed without LURE.
+                    LURE operates by abstracting package formats and package managers, enabling
+                    the creation and installation of native packages automatically built from
+                    PKGBUILD-like bash scripts, using the package manager already present on the system.
+                    As a result, packages installed through LURE can be managed like any other package,
+                    without the need for additional intervention from LURE for most operations.
                 </div>
             </div>
         </div>
