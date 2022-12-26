@@ -6,6 +6,7 @@
     import { DoubleBounce } from 'svelte-loading-spinners';
 
     import Header from "../../../header.svelte";
+    import Footer from "../../../footer.svelte";
 
     import Icon from '@iconify/svelte';
 
@@ -118,3 +119,5 @@
         </div>
     {/await}
 </section>
+
+<Footer/>

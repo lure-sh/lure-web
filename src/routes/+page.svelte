@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
 
     import Header from "./header.svelte";
+    import Footer from "./footer.svelte";
 
     import Highlight from 'svelte-highlight';
     import bash from 'svelte-highlight/languages/bash';
@@ -105,3 +106,5 @@
     </svelte:component>
 
 </section>
+
+<Footer/>

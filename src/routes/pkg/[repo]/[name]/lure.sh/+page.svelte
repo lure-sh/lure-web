@@ -10,6 +10,7 @@
     import agate from 'svelte-highlight/styles/agate';
 
     import Header from "../../../../header.svelte";
+    import Footer from "../../../../footer.svelte";
 
     import Icon from '@iconify/svelte';
 
@@ -42,3 +43,4 @@
     {/await}
 </section>
 
+<Footer/>

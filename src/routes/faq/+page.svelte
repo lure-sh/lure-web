@@ -1,5 +1,6 @@
 <script>
     import Header from "../header.svelte";
+    import Footer from "../footer.svelte";
 </script>
 
 <Header/>
@@ -50,3 +51,5 @@
         and <a href="https://github.com/Arsen6331/lure/blob/master/docs/adding-packages.md">Adding Packages to LURE's repo</a>.
     </p>
 </div>
+
+<Footer/>

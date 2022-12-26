@@ -5,6 +5,7 @@
     import { LURE_WEB_API_URL } from '$env/static/public';
 
     import Header from "../header.svelte";
+    import Footer from "../footer.svelte";
     import { DoubleBounce } from 'svelte-loading-spinners';
     import Icon from '@iconify/svelte';
 
@@ -124,3 +125,5 @@
     {/await}
 
 </section>
+
+<Footer/>
