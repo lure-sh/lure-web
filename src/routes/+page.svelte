@@ -82,7 +82,7 @@
     <p>LURE can easily be installed by running its install script:</p>
     <Highlight language={bash} code='curl https://www.arsenm.dev/lure.sh | bash'/>
     <p>
-        It's also available on the AUR as <a href="https://aur.archlinux.org/packages/lure-bin"><code>lure-bin</code></a> and distro
+        It's also available on the AUR as <a href="https://aur.archlinux.org/packages/linux-user-repository-bin"><code>linux-user-repository-bin</code></a> and distro
         packages are provided at the <a href="https://gitea.arsenm.dev/Arsen6331/lure/releases/latest">latest Gitea release</a>.
     </p>
     <br>
