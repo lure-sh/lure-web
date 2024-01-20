@@ -1,6 +1,8 @@
 module lure.sh/lure-web
 
-go 1.21.0
+go 1.21.2
+
+toolchain go1.21.6
 
 require (
 	github.com/alecthomas/chroma/v2 v2.9.1
