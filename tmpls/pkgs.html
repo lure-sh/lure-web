@@ -1,0 +1,62 @@
+#macro("content"):
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Packages</li>
+        </ul>
+    </nav>
+    
+    <h1>Package Search</h1>
+    
+    <form action="/pkgs">
+        <input type="text" id="query" name="q" value='#(query.Get("q"))' placeholder="Query"/>
+        <div class="grid">
+            <div>
+                <select name="sort">
+                    <option value="">Unsorted</option>
+                    <option value="name" #(query.Get("sort") == "name" ? "selected" : "")>Sort by Name</option>
+                    <option value="version" #(query.Get("sort") == "version" ? "selected" : "")>Sort by Version</option>
+                    <option value="repo" #(query.Get("sort") == "repo" ? "selected" : "")>Sort by Repository</option>
+                </select>
+            </div>
+            <div>
+                <select name="filter" onchange="onFilterChange(event)">
+                    <option value="">No Filter</option>
+                    <option value="inrepo" #(query.Get("filter") == "inrepo" ? "selected" : "")>In Repo</option>
+                    <option value="arch" #(query.Get("filter") == "arch" ? "selected" : "")>Supports Architecture</option>
+                </select>
+            </div>
+        </div>
+        <input class='#(query.Get("filter") == "" ? "hidden" : "")' type="text" id="filterValue" name="fv" value='#(query.Get("fv"))' placeholder="Filter Value"/>
+        <button type="submit">Search</button>
+    </form>
+    <hr>
+
+    #for(pkg in pkgs):
+        <article>
+            <header>
+                <div class="justify-space-between">
+                    <span class="left"><strong>#(pkg.Repository) / #(pkg.Name)</strong></span>
+                    <span class="right">#(pkg.Version)</span>
+                </div>
+            </header>
+            <p>#(pkg.Description)</p>
+            <footer class="centered">
+                <a href="/pkg/#(pkg.Repository)/#(pkg.Name)">More Info &rarr;</a>
+            </footer>
+        </article>
+    #!for
+    
+    <script>
+        function onFilterChange(e) {
+            let filterValue = document.getElementById('filterValue');
+            if (e.srcElement.value == '') {
+                filterValue.classList.add('hidden');
+            } else {
+                filterValue.classList.remove('hidden');
+            }
+        }
+    </script>
+#!macro
+
+#include("base.html", title = "Package Search", desc = "Search for LURE packages")

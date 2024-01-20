@@ -1,0 +1,142 @@
+#macro("content"):
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pkgs">Packages</a></li>
+            <li>#(pkg.Name)</li>
+        </ul>
+    </nav>
+    <hgroup>
+        <h1>#(pkg.Name)</h1>
+        <h2>#(pkg.FullVersion())</h2>
+    </hgroup>
+    <a href="/pkg/#(pkg.Repository)/#(pkg.Name)/script" role="button">View script</a>
+    <a href="javascript:openModal()" role="button" class="secondary">View badge</a>
+    <br>
+    <article>
+        <h3 >Package Information</h3>
+        <table>
+            <tbody>
+                #if(pkg.Description != ""):
+                    <tr>
+                        <th>Description:</th>
+                        <td>#(pkg.Description)</td>
+                    </tr>
+                #!if
+                #if(pkg.Homepage != ""):
+                    <tr>
+                        <th>Homepage:</th>
+                        <td><a href="#(pkg.Homepage)" target="_blank">#(pkg.Homepage)</a></td>
+                    </tr>
+                #!if
+                #if(pkg.Maintainer != ""):
+                    <tr>
+                        <th>Maintainer:</th>
+                        <td>#(pkg.Maintainer)</td>
+                    </tr>
+                #!if
+                #if(len(pkg.Licenses) != 0):
+                    <tr>
+                        <th>Licenses:</th>
+                        <td>
+                            #for(i, license in pkg.Licenses):
+                                #if(hasPrefix(license, "custom")):
+                                    #(license)#if(i != len(pkg.Licenses) - 1):,&nbsp;#!if
+                                #else:
+                                    <a href="https://spdx.org/licenses/#(license).html" target="_blank">#(license)</a>#if(i != len(pkg.Licenses) - 1):,&nbsp;#!if
+                                #!if
+                            #!for
+                        </td>
+                    </tr>
+                #!if
+                #if(len(pkg.Architectures) != 0):
+                    <tr>
+                        <th>Architectures:</th>
+                        <td>#(join(pkg.Architectures, ", "))</td>
+                    </tr>
+                #!if
+                #if(len(pkg.Conflicts) != 0):
+                    <tr>
+                        <th>Conflicts:</th>
+                        <td>#(join(pkg.Conflicts, ", "))</td>
+                    </tr>
+                #!if
+                #if(len(pkg.Provides) != 0):
+                    <tr>
+                        <th>Provides:</th>
+                        <td>#(join(pkg.Provides, ", "))</td>
+                    </tr>
+                #!if
+                <tr>
+                    <th>Repository:</th>
+                    <td>#(pkg.Repository)</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+    
+    #if(len(pkg.Depends) > 0):
+        <article>
+            <h3 >Runtime Dependencies</h3>
+            <table>
+                <tbody>
+                    #for(override, pkgList in pkg.Depends):
+                        <tr>
+                            <th>#(override == "" ? "default" : override):</th>
+                            <td>#(join(pkgList, ", "))</td>
+                        </tr>
+                    #!for
+                </tbody>
+            </table>
+        </article>
+    #!if
+    
+    #if(len(pkg.BuildDepends) > 0):
+        <article>
+            <h3 >Build Dependencies</h3>
+            <table>
+                <tbody>
+                    #for(override, pkgList in pkg.BuildDepends):
+                        <tr>
+                            <th>#(override == "" ? "default" : override):</th>
+                            <td>#(join(pkgList, ", "))</td>
+                        </tr>
+                    #!for
+                </tbody>
+            </table>
+        </article>
+    #!if
+    
+    <dialog id="badgeModal">
+        <article style="min-width: 60%">
+            <header>
+                <strong>Badge</strong>
+                <a aria-label="Close" class="close" href="javascript:closeModal()"></a>                
+            </header>
+            <p class="centered">
+                <img src="#(url)/badge.svg" alt="LURE badge for #(pkg.Name)">
+                <hr>
+            </p>
+            <label for="badgeMarkdown">Markdown</label>
+            <input id="badgeMarkdown" value="[![LURE badge for #(pkg.Name)](#(url)/badge.svg)](#(url))" readonly />
+            <label for="badgeHTML">HTML</label>
+            <input id="badgeHTML" value='<a href="#(url)"><img src="#(url)/badge.svg" alt="LURE badge for #(pkg.Name)">' readonly />
+        </article>
+    </dialog>
+    
+    <script>
+        function openModal() {
+            let modal = document.getElementById("badgeModal");           
+            document.documentElement.classList.add('modal-is-open'); 
+            modal.setAttribute('open', true);
+        }
+        
+        function closeModal() {
+            let modal = document.getElementById("badgeModal");
+            document.documentElement.classList.remove('modal-is-open');           
+            modal.removeAttribute('open');
+        }
+    </script>
+#!macro
+
+#include("base.html", title = pkg.Name + " Package", desc = sprintf("%s %s - %s", pkg.Name, pkg.FullVersion(), pkg.Description))

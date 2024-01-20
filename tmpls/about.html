@@ -1,0 +1,77 @@
+#macro("content"):
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>About</li>
+        </ul>
+    </nav>
+    
+    <h1>About LURE</h1>
+    
+    <section class="container">
+        <hgroup><h2>Why does LURE exist?</h2></hgroup>
+        <p>
+            LURE was created because packaging software for multiple Linux distros can be difficult and
+            error-prone, and installing those packages can be a nightmare for users unless they're available
+            in their distro's official repositories.
+        </p>
+        <p>
+            Take Discord for example. It only provides a deb file and a tar.gz file, and it's not available
+            in most official repositories. That means users of RPM distros have to manually install discord
+            using the tarball or rely on community-maintained repositories that don't always have
+            up-to-date versions of Discord. That's also made worse by the fact that Discord refuses to run
+            if there's a newer version available.
+        </p>
+        <p>
+            LURE fixes that by always providing the most up to date version of Discord, which means all that
+            RPM users have to do is run <code>lure in discord</code> and LURE will get the tarball and
+            automatically build an RPM package out of it for them. When there's a newer version of Discord
+            available, users can just run <code>lure up</code> and LURE will automatically download the updated
+            version of Discord and install it. That also helps users of deb distros because it means they don't
+            have to manually download packages for software like Discord.
+        </p>
+    </section>
+    <section class="container">
+        <hgroup><h2>How does LURE work?</h2></hgroup>
+        <p>
+            Similar to Arch Linux's AUR, LURE has a repository of shell scripts that tell it how to build a
+            package. When you run a LURE command, it updates its repository and interprets the shell script
+            for the package you want to install using its built-in bash implementation. Then, it uses the
+            code inside the script to build a file structure to be included in the final package. It detects
+            which distro you're running, resolves dependencies, detects which package manager you have and
+            which package format it uses, builds metadata for the package from the information in the shell
+            script, builds the final package, and then runs the install command for your package manager to
+            install it.
+        </p>
+    </section>
+    <section class="container">
+        <hgroup><h2>How does LURE keep its packages up to date?</h2></hgroup>
+        <p>
+            LURE can automatically update its packages using a bot called
+            <a href="https://gitea.elara.ws/lure/lure-updater">lure-updater</a>. It accepts plugins that
+            detect when software is updated upstream and updates the LURE package accordingly. The plugins
+            that are currently running in my instance of the bot can be found in the
+            <a href="https://gitea.elara.ws/lure/updater-plugins">updater-plugins</a> repo. The
+            <code>discord-bin</code> package, for example, checks Discord's API every hour to see if they've
+            released an updated version, and if they have, it pushes an update to LURE's repo.
+        </p>
+    </section>
+    <section class="container">
+        <hgroup><h2>How do I add my own package to LURE?</h2></hgroup>
+        <p>
+            LURE provides <a href="https://github.com/lure-sh/lure/blob/master/docs/packages">comprehensive documentation</a>
+            for packagers. If you need help with anything, feel free to ask on LURE's <a href="https://reddit.com/r/linux_user_repository">subreddit</a>.
+            If you find a bug or would like a feature to be added, please open an issue on LURE's git repo.
+        </p>
+    </section>
+    <section class="container">
+        <hgroup><h2>Can I use and modify LURE's icons?</h2></hgroup>
+        <p>
+            LURE's icons are available on the <a href="/icons">icons page</a> of this site. They're licensed
+            under CC-BY-NC-SA 4.0, which means you're free to share, modify, and use the icons for non-commercial
+            purposes as long as you give appropriate credit and indicate any changes made to the original icons.
+        </p>
+    </section>
+#!macro
+
+#include("base.html", title = "About", desc = "About the Linux User Repository")

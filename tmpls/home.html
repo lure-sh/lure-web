@@ -1,0 +1,32 @@
+#macro("content"):
+    <section class="container centered">
+        <img src="/static/icons/lure-no-text.svg" alt="LURE logo without text" width="200">
+        <hgroup>
+            <h1>LURE</h1>
+            <h2>The community repository missing from your Linux distro</h2>
+        </hgroup>
+    </section>
+    
+    <section class="container">
+        <hgroup>
+            <h1>What does LURE do?</h1>
+            <h2>LURE allows you to:</h2>
+        </hgroup>
+        <ul>
+            <li>Access a wide range of software beyond what's available in official repositories</li>
+            <li>Get new versions of software as they come out, before official repositories ship them</li>
+            <li>Install unofficial software without having to deal with a separate package manager</li>
+            <li>Release software for Linux without having to package it for different distributions</li>
+        </ul>
+    </section>
+    <section class="container">
+        <hgroup>
+            <h1>Install LURE</h1>
+            <h2>Paste this into your Linux terminal and the install script will set everything up for you</h2>
+        </hgroup>
+        <pre><code>curl -fsSL lure.sh/install | bash</code></pre>
+        <p>LURE is also available on the AUR as <code>linux-user-repository-bin</code> and distro packages are provided at the <a href="https://gitea.elara.ws/lure/lure/releases/latest">latest Gitea release</a></p>
+    </section>
+#!macro
+
+#include("base.html", title = "Home", desc = "The community repository missing from your Linux distro")

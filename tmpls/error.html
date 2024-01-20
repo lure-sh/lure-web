@@ -1,0 +1,25 @@
+#macro("content"):
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Error</li>
+        </ul>
+    </nav>
+        
+    <h1>Error</h1>
+    <br><br>
+    
+    
+    <section class="container centered">
+        <div>
+            <hgroup>
+                <h1>Something Went Wrong!</h1>
+                <h2>Error #(error.StatusCode): #(error.StatusText())</h2>
+            </hgroup>
+            <pre><code>#(error.Msg)</code></pre>
+            <a href="/" role="button">Go Back Home</a>
+        </div>
+    </section>    
+#!macro
+
+#include("base.html", title = sprintf("Error %d", error.StatusCode), desc = sprintf("Error %d: %s", error.StatusCode, error.StatusText()))

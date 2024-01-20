@@ -1,0 +1,39 @@
+#macro("content"):
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Icons</li>
+        </ul>
+    </nav>
+    
+    <h1>Icons</h1>
+    
+    <section class="container">
+        <div class="grid">
+            <div>
+                <article class="centered">
+                    <header><strong>Without Text</strong></header>
+                    <img class="icon" src="/static/icons/lure-no-text.svg" alt="LURE icon without text">                    
+                    <footer><a href="/static/icons/lure-no-text.svg" download>Download</a></footer>
+                </article>
+            </div>
+            <div>
+                <article class="centered">
+                    <header><strong>With Text</strong></header>
+                    <img class="icon" src="/static/icons/lure-text.svg" alt="LURE icon with text">                    
+                    <footer><a href="/static/icons/lure-text.svg" download>Download</a></footer>
+                </article>
+            </div>
+            <div>
+                <article class="centered">
+                    <header><strong>White With Text</strong></header>
+                    <img class="icon" src="/static/icons/lure-text-white.svg" alt="LURE icon with text">                    
+                    <footer><a href="/static/icons/lure-text-white.svg" download>Download</a></footer>
+                </article>
+            </div>
+        </div>
+        <strong>Note: The icons on this page are licensed under CC-BY-NC-SA 4.0 unless otherwise specified</strong>
+    </section>
+#!macro
+
+#include("base.html", title = "Icons", desc = "Linux User Repository icons and logos")

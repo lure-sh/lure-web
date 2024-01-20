@@ -1,0 +1,19 @@
+#macro("content"):
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pkgs">Packages</a></li>
+            <li><a href="/pkg/#(repoName)/#(pkgName)">#(pkgName)</a></li>
+            <li>Script</li>
+        </ul>
+    </nav>
+    
+    <hgroup>
+        <h1>Build Script</h1>
+        <h2>#(repoName) / #(pkgName)</h2>
+    </hgroup>
+    
+    #(script)
+#!macro
+
+#include("base.html", title = pkgName + " Build Script", desc = sprintf("Build script for the %s package", pkgName))

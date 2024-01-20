@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+    <head>
+        <title>#(title) | LURE Web</title>
+        <meta name="description" content='#(desc | title + " on LURE Web")' />
+        <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+        <link rel="stylesheet" href="/static/css/pico.min.css">
+        <link rel="stylesheet" href="/static/css/lure.css">
+        <link rel="icon" href="/static/icons/favicon.ico"> 
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/"><img src="/static/icons/lure-text-white.svg" alt="LURE Logo" width="85"></a></li>
+            </ul>
+            <ul>
+                <li><a href="/" class='#(title == "Home" ? "active" : "")'>Home</a></li>
+                <li><a href="/pkgs" class='#(title == "Package Search" ? "active" : "")'>Packages</a></li>
+                <li><a href="/about" class='#(title == "About" ? "active" : "")'>About</a></li>
+            </ul>
+        </nav>
+        
+        <main class="container">
+            #macro("content")
+        </main>
+        
+        
+        <footer class="container">
+            <div class="headings marginless">
+                <h2>Copyright &copy; #(now().Year()) LURE Web Contributors</h2>
+            </div>
+            <a  href="https://github.com/lure-sh/lure-web" target="_blank">Source Code</a>
+        </footer>
+    </body>
+</html>

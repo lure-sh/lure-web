@@ -1,0 +1,15 @@
+platform: linux/amd64
+steps:
+  docker:
+    image: gitea.elara.ws/elara6331/builder
+    environment:
+      - REGISTRY=gitea.elara.ws
+      - REGISTRY_USERNAME=Elara6331
+      - KO_DOCKER_REPO=gitea.elara.ws/lure
+      - KO_DEFAULTBASEIMAGE=gitea.elara.ws/elara6331/static
+    secrets: [ registry_password ]
+    commands:
+      - registry-login
+      - ko build -B --platform=linux/amd64,linux/arm64,linux/riscv64 -t latest,${CI_COMMIT_TAG} --sbom=none
+    when:
+      event: tag

@@ -1,0 +1,108 @@
+:root {
+  --primary: #0060A8;
+  --primary-hover: #026EBF;
+  --secondary: #0EAAAA;
+  --secondary-hover: #13b4b4;
+  --font-size: 16px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+a.close {
+  cursor: pointer;
+}
+
+nav:not([aria-label="breadcrumb"]) {
+  /* Workaround for horizontal overflow due to justify-content */
+  overflow-x: hidden;
+}
+
+/* Add some spacing between the navbar items and the edge of the page */
+nav:not([aria-label="breadcrumb"]) ul {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+nav:not([aria-label="breadcrumb"]) a {
+  color: #dddedf;
+}
+
+nav:not([aria-label="breadcrumb"]) a.active {
+  background-color: var(--primary);
+}
+
+nav:not([aria-label="breadcrumb"]) a:hover:not(.active) {
+  color: var(--primary-hover);
+}
+
+/* Keep the footer at the bottom */
+body > main {
+  min-height: 100vh;
+}
+
+/* Make the footer smaller */
+body > footer {
+  --block-spacing-vertical: 2rem;
+}
+
+/* Make card header and footer smaller */
+article > header, article > footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Make the bottom margin on card headers smaller */
+article > header {
+  margin-bottom: calc(var(--block-spacing-vertical) / 2);
+}
+
+/* Make the top margin on card footers smaller */
+article > footer {
+  margin-top: calc(var(--block-spacing-vertical) / 2);
+}
+
+/* Fix the icon height to 100px to make cards uniform */
+article > img.icon {
+  height: 100px;
+}
+
+th {
+  width: 30%;
+}
+
+td {
+  word-break: break-word;
+  cursor: text;
+  width: 70%;
+}
+
+pre code {
+  cursor: text;
+}
+
+.marginless {
+  margin: 0;
+}
+
+[role="link"], a {
+  --color: var(--secondary);
+}
