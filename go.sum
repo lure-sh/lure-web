@@ -128,8 +128,8 @@ github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778/go.mod h1:2MuV+tbUrU1z
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 go.elara.ws/logger v0.0.0-20230421022458-e80700db2090 h1:RVC8XvWo6Yw4HUshqx4TSzuBDScDghafU6QFRJ4xPZg=
 go.elara.ws/logger v0.0.0-20230421022458-e80700db2090/go.mod h1:qng49owViqsW5Aey93lwBXONw20oGbJIoLVscB16mPM=
-go.elara.ws/salix v0.0.0-20231228151958-745b6c0e5f10 h1:Z0XcJexULcFf0ITcvQml/z+c/RW4fpon3nDWuoDcr3Q=
-go.elara.ws/salix v0.0.0-20231228151958-745b6c0e5f10/go.mod h1:niWia13iw7qDrS1C1mlqv5hxO1sunt8CcOQAB5yVlNU=
+go.elara.ws/salix v0.0.0-20240119074218-9bf56b50a461 h1:vVyRue86HMRBEguyDUoarLEQjVKQ/r8x6kX3qGgvVkM=
+go.elara.ws/salix v0.0.0-20240119074218-9bf56b50a461/go.mod h1:niWia13iw7qDrS1C1mlqv5hxO1sunt8CcOQAB5yVlNU=
 go.elara.ws/vercmp v0.0.0-20230622214216-0b2b067575c4 h1:Ep54XceQlKhcCHl9awG+wWP4kz4kIP3c3Lzw/Gc/zwY=
 go.elara.ws/vercmp v0.0.0-20230622214216-0b2b067575c4/go.mod h1:/7PNW7nFnDR5W7UXZVc04gdVLR/wBNgkm33KgIz0OBk=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=

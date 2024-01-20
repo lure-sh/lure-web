@@ -9,7 +9,7 @@ require (
 	github.com/rs/cors v1.10.1
 	github.com/uptrace/bunrouter v1.0.21
 	go.elara.ws/logger v0.0.0-20230421022458-e80700db2090
-	go.elara.ws/salix v0.0.0-20231228151958-745b6c0e5f10
+	go.elara.ws/salix v0.0.0-20240119074218-9bf56b50a461
 	golang.org/x/text v0.13.0
 	lure.sh/lure v0.1.4-0.20231223033536-5dc31f43aa39
 )
