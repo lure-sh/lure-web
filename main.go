@@ -10,6 +10,7 @@ import (
 	"go.elara.ws/logger"
 	"go.elara.ws/logger/log"
 	"lure.sh/lure/pkg/loggerctx"
+	"lure.sh/lure/pkg/repos"
 )
 
 //go:embed static
@@ -26,6 +27,11 @@ func main() {
 	mux.Use(cache).GET("/static/*path", bunrouter.HTTPHandler(fileServer))
 
 	ctx := loggerctx.With(context.Background(), log.Logger)
+
+	err := repos.Pull(ctx, nil)
+	if err != nil {
+		log.Fatal("Error pulling repos").Err(err).Send()
+	}
 
 	registerBadge(mux)
 	registerSite(mux)
