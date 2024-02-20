@@ -48,6 +48,11 @@ func registerSite(mux *bunrouter.Router) {
 		return HTTPError{404, "page not found: " + req.URL.Path}
 	})
 
+	g.GET("/install", func(w http.ResponseWriter, req bunrouter.Request) error {
+		http.Redirect(w, req.Request, "https://gitea.elara.ws/lure/lure/raw/branch/master/scripts/install.sh", http.StatusFound)
+		return nil
+	})
+
 	g.GET("/about", func(w http.ResponseWriter, req bunrouter.Request) error {
 		return ns.ExecuteTemplate(w, "about.html", nil)
 	})
